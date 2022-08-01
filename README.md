@@ -1,4 +1,4 @@
-<h1 align="center">Microsoft Azure Active Log</h1>  
+<h1 align="center">Microsoft Azure Activity Log</h1>  
 
 <br/>  
 <div align="center" style="display:flex;">  
@@ -10,14 +10,14 @@
   </p> 
 </div> 
 
-#### Plugin to get the Microsoft Azure Active Log
+#### Plugin to get the Microsoft Azure Activity Log
 
 
-> SpaceONE's [plugin-azure-active-log](https://github.com/spaceone-dev/plugin-azure-active-log-mon-datasource) is a convenient tool to 
-get the MS Azure Active Log 
+> SpaceONE's [plugin-azure-activity-log](https://github.com/spaceone-dev/plugin-azure-activity-log-mon-datasource) is a convenient tool to 
+get the MS Azure Activity Log 
 
 
-Find us also at [Dockerhub](https://hub.docker.com/r/spaceone/azure-active-log-mon-datasource)
+Find us also at [Dockerhub](https://hub.docker.com/r/spaceone/azure-activity-log-mon-datasource)
 > Latest stable version : 1.0.0
 
 Please contact us if you need any further information. 
