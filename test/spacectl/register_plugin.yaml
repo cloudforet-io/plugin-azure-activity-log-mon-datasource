@@ -1,0 +1,18 @@
+---
+name: azure-activity-log
+provider: azure
+service_type: monitoring.DataSource
+image: spaceone/plugin-azure-activity-log-mon-datasource
+labels:
+  - Monitoring
+  - Azure
+  - ActivityLog
+capability:
+  monitoring_type: LOG
+  supported_schema:
+  - azure_client_secret
+  use_resource_secret: true
+tags:
+  description: Azure Activity Monitoring Log Plugin
+  icon: https://spaceone-custom-assets.s3.ap-northeast-2.amazonaws.com/console-assets/icons/azure-cloud-services.svg
+  spaceone:plugin_name: azure-activity-log
