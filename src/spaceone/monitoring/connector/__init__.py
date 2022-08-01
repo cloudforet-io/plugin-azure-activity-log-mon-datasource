@@ -1,0 +1,1 @@
+from spaceone.monitoring.connector.azure_connector.activity_log import ActivityLog
