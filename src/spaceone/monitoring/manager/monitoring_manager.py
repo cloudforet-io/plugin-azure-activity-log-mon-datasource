@@ -1,5 +1,6 @@
 import logging
 from spaceone.core.manager import BaseManager
+from spaceone.core.utils import get_dict_value
 from spaceone.monitoring.conf.monitoring_conf import *
 from spaceone.monitoring.connector.azure_connector.activity_log import ActivityLog
 from spaceone.monitoring.model.log_model import Log, ActivityLogInfo
@@ -12,6 +13,7 @@ class MonitoringManager(BaseManager):
         super().__init__(transaction)
 
     def list_logs(self, params):
+        results = []
         activity_log_connector: ActivityLog = self.locator.get_connector('ActivityLog', **params)
         activity_log_connector.set_connect(params.get('scheme'), params.get('options'), params.get('secret_data'))
 
@@ -19,11 +21,26 @@ class MonitoringManager(BaseManager):
         _LOGGER.debug(f'[list_logs] filter: {filters}')
 
         logs = activity_log_connector.list_logs(filters)
-        # import pprint
-        # pprint.pprint(logs)
 
-        logs = [ActivityLogInfo(self.convert_nested_dictionary(log), strict=False) for log in logs]
-        yield Log({'results': logs})
+        for log in logs:
+            log_dict = self.convert_nested_dictionary(log)
+
+            if filter_log := self.keyword_filter(log_dict, params):
+                results.append(ActivityLogInfo(filter_log, strict=False))
+
+        yield Log({'results': results})
+
+    @staticmethod
+    def keyword_filter(log, params):
+        if keyword := params.get('keyword'):
+            value = get_dict_value(log, DEFAULT_EVENT_NAME_PATH)
+
+            if value and keyword.lower() in value.lower():
+                return log
+            else:
+                return None
+        else:
+            return log
 
     @staticmethod
     def set_filter(params):

@@ -1,0 +1,1 @@
+DEFAULT_EVENT_NAME_PATH = 'operation_name.localized_value'
