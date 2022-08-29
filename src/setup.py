@@ -21,9 +21,9 @@ with open('VERSION', 'r') as f:
     f.close()
 
 setup(
-    name='plugin-azure-active-log-mon-datasource',
+    name='plugin-azure-activity-log-mon-datasource',
     version=VERSION,
-    description='MS Azure Active Log monitoring datasource',
+    description='MS Azure Activity Log monitoring datasource',
     long_description='',
     url='https://www.spaceone.dev/',
     author='MEGAZONE SpaceONE Team',
