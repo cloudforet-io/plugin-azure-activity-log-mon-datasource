@@ -12,7 +12,7 @@ on:
 
 env:
   workflow_file_name: deploy.yaml
-  owner: spaceone-dev
+  owner: cloudforet-io
   repo: actions
   ref: master
 
