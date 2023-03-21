@@ -22,7 +22,7 @@ class MetaDataView(Model):
 
 class LogMetadata(Model):
     view = ModelType(MetaDataView)
-    required_keys = ListType(StringType, default=['data.cloudtrail'])
+    required_keys = ListType(StringType, default=['data.activity_log'])
     supported_providers = ListType(StringType, default=['azure'])
 
     @classmethod
