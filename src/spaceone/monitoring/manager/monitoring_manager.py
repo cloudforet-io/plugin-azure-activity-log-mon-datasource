@@ -9,8 +9,8 @@ _LOGGER = logging.getLogger(__name__)
 
 
 class MonitoringManager(BaseManager):
-    def __init__(self, transaction):
-        super().__init__(transaction)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
     def list_logs(self, params):
         results = []
