@@ -10,7 +10,7 @@ _LOGGER = logging.getLogger(__name__)
 
 
 class AzureConnector(BaseConnector):
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
         """
         kwargs
             - schema
@@ -18,7 +18,7 @@ class AzureConnector(BaseConnector):
             - secret_data
         """
 
-        super().__init__(transaction=None, config=None)
+        super().__init__(*args, **kwargs)
         self.client = None
 
     def set_connect(self, schema, options: dict, secret_data: dict):
@@ -44,4 +44,3 @@ class AzureConnector(BaseConnector):
         except Exception as e:
             print(e)
             raise ERROR_INVALID_CREDENTIALS()
-
