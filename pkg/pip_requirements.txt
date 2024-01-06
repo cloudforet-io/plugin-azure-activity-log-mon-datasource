@@ -1,6 +1,3 @@
-spaceone-core
-spaceone-api
-spaceone-tester
 schematics
 adal
 msrestazure
