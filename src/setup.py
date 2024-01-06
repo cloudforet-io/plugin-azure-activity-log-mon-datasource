@@ -16,29 +16,27 @@
 
 from setuptools import setup, find_packages
 
-with open('VERSION', 'r') as f:
+with open("VERSION", "r") as f:
     VERSION = f.read().strip()
     f.close()
 
 setup(
-    name='plugin-azure-activity-log-mon-datasource',
+    name="plugin-azure-activity-log-mon-datasource",
     version=VERSION,
-    description='MS Azure Activity Log monitoring datasource',
-    long_description='',
-    url='https://www.spaceone.dev/',
-    author='MEGAZONE SpaceONE Team',
-    author_email='admin@spaceone.dev',
-    license='Apache License 2.0',
+    description="MS Azure Activity Log monitoring datasource",
+    long_description="",
+    url="https://www.spaceone.dev/",
+    author="MEGAZONE SpaceONE Team",
+    author_email="admin@spaceone.dev",
+    license="Apache License 2.0",
     packages=find_packages(),
     install_requires=[
-        'spaceone-core',
-        'spaceone-api',
-        'spaceone-tester',
-        'schematics',
-        'adal',
-        'msrestazure',
-        'azure-identity',
-        'azure-mgmt-monitor',
+        "spaceone-api",
+        "schematics",
+        "adal",
+        "msrestazure",
+        "azure-identity",
+        "azure-mgmt-monitor",
     ],
     zip_safe=False,
 )
