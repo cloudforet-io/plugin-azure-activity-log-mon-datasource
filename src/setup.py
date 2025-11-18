@@ -14,14 +14,14 @@
 #   limitations under the License.
 
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 with open("VERSION", "r") as f:
     VERSION = f.read().strip()
     f.close()
 
 setup(
-    name="plugin-azure-activity-log-mon-datasource",
+    name="plugin_azure_activity_log_mon_datasource",
     version=VERSION,
     description="MS Azure Activity Log monitoring datasource",
     long_description="",
